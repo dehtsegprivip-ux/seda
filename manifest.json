@@ -1,0 +1,29 @@
+{
+    "name": "SEDA - Lavado de Autos y Tapices",
+    "short_name": "SEDA",
+    "description": "Servicio profesional de lavado de autos y limpieza de tapices a domicilio en Nueva Imperial",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0056b3",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes":"180x180",
+            "type":"image/png"
+        }
+    ]
+}

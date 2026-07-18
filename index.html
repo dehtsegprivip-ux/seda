@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SEDA - Servicio profesional de lavado de autos y limpieza de tapices a domicilio en Nueva Imperial, Región de la Araucanía. Precios accesibles y descuentos de inauguración.">
+    <title>SEDA - Lavado de Autos y Tapices a Domicilio</title>
+    
+    <!-- Favicon corregido (ico usa image/x-icon) -->
+    <link rel="icon" type="image/x-icon" href="SEDA-SIN-FONDO.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA Meta Tags -->
+     <meta name="theme-color" content="#0056b3">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+     <meta name="apple-mobile-web-app-title" content="SEDA">
+
+    <!-- Web App Manifest -->
+     <link rel="manifest" href="manifest.json">
+     
+    <!-- Apple Touch Icon -->
+     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="SEDA-SIN-FONDO.ico">
+     <link rel="icon" type="image/png" sizes="32x32" href="icon-192x192.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="icon-192x192.png">
+
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --accent: #00c4cc;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Evita que el menú fijo tape los títulos al hacer scroll */
+            scroll-padding-top: 80px; 
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navegación */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background-color: var(--success);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background-color 0.3s ease !important;
+        }
+
+        .btn-nav:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9), rgba(0, 196, 204, 0.8)), url('Letrero Publicitario.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 196, 204, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #00aeb5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 196, 204, 0.6);
+        }
+
+        /* Servicios */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid-vehicles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .services-grid-others {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent);
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .service-card h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--light);
+        }
+
+        .services-divider {
+            margin: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .services-divider h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .services-divider p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Galería y Maquinaria */
+        .gallery {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 4/3;
+            background-color: white;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 86, 179, 0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h2,
+        .gallery-overlay h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Nosotros / Ubicación */
+        .about {
+            background-color: var(--light);
+            padding: 5rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        .about-features i {
+            color: var(--success);
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 86, 179, 0.2);
+        }
+
+        .about-image iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 20px;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 15px;
+            background-color: var(--light);
+            min-width: 120px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
+            background-color: white;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-item span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover span {
+            color: var(--primary);
+        }
+        /* Caja de aviso para cobro por trayecto */
+.alert-notice {
+    background-color: #e8f4fd; /* Azul muy suave */
+    color: var(--primary-dark);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 2rem auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.05);
+}
+
+.alert-notice i {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .alert-notice {
+        font-size: 0.85rem;
+        padding: 0.8rem 1rem;
+        margin: 1.5rem 1rem;
+    }
+}
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid-vehicles,
+            .services-grid-others {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Menú hamburguesa pendiente de JS */
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+
+            .services-grid-vehicles,
+            .services-grid-others {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                min-width: 100px;
+                padding: 0.8rem;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">
+                <img src="SEDA SIN FONDO.png" alt="SEDA - Lavado de Autos y Tapices a Domicilio" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#maquinaria">Maquinaria</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto" class="btn-nav"><i class="fab fa-whatsapp"></i> Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <h1>El Brillo que tu Auto Merece,<br>en la Comodidad de tu Hogar</h1>
+        <p>Servicio profesional de lavado de autos y limpieza profunda de tapices a domicilio en Nueva Imperial, IX Región.</p>
+        <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20que%20ofrecen..." class="btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cotizar Ahora
+        </a>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Serás atendido a la brevedad por un agente (nunca por un robot)</p>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="header-content">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Tecnología, dedicación y productos de alta calidad llevados hasta tu puerta.</p>
+        <p>Solo necesitamos conectarnos a tus redes de agua y electricidad cuando vamos a tu domicilio.</p>
+        <p>Nuestras máquinas son amigables con el medio ambiente ya que ahorran el 80% de suministros.</p>
+        <p style="margin-top: 1rem;"><strong>Cobertura:</strong> Nueva Imperial, Carahue, Chol-Chol, Labranza, Temuco y Padre Las Casas.</p>
+        </div>
+
+        <!-- Separador para vehículos -->
+        <div class="services-divider">
+            <h3><i class="fas fa-car-side"></i> Lavado de Vehículos</h3>
+            <p>Servicios profesionales para todo tipo de vehículos</p>
+        </div>
+
+        <!-- GRID DE VEHICULOS - 3 COLUMNAS -->
+        <div class="services-grid-vehicles">
+            <!-- Compacto -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-car"></i></div>
+                <h3>Compacto - Servicio Básico</h3>
+                <p>Limpieza exterior</p>
+                <p>Renovador de neumáticos</p>
+                <p>Shampoo para Vehículos</p>
+                <h4>$10.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">Compacto - Servicio Medium</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior</p>
+                <h4>$20.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">Compacto - Servicio Full</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior completa</p>
+                <p>+ Limpieza de Tapicería</p>
+                <p>+ Desinfección a Vapor</p>
+                <h4>$35.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+            </div>
+
+            <!-- Sedán -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-car-side"></i></div>
+                <h3>Sedán - Servicio Básico</h3>
+                <p>Limpieza exterior</p>
+                <p>Renovador de neumáticos</p>
+                <p>Shampoo para Vehículos</p>
+                <h4>$15.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">Sedán - Servicio Medium</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior</p>
+                <h4>$25.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">Sedán - Servicio Full</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior completa</p>
+                <p>+ Limpieza de Tapicería</p>
+                <p>+ Desinfección a Vapor</p>
+                <h4>$40.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+            </div>
+
+            <!-- SUV/FURGONES -->            
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-truck"></i></div>
+                <h3>SUV / Furgones - Básico</h3>
+                <p>Limpieza exterior</p>
+                <p>Renovador de neumáticos</p>
+                <p>Shampoo para vehículos</p>
+                <h4>$20.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">SUV / Furgones - Medium</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior</p>
+                <h4>$30.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+
+                <h3 style="margin-top: 1.5rem;">SUV / Furgones - Full</h3>
+                <p>Limpieza interior completa</p>
+                <p>Aspirado</p>
+                <p>Renovador de Plásticos</p>
+                <p>Limpieza exterior completa</p>
+                <p>+ Limpieza de Tapicería</p>
+                <p>+ Desinfección a Vapor</p>
+                <h4>$45.000 (no incluye maletero)</h4>
+                <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--gray);"><strong>*Nota:</strong> La limpieza de maletero se podrá incluir en el valor de los servicios dependiendo del grado de suciedad.</p>
+
+        <!-- SEPARADOR PARA OTROS SERVICIOS -->
+        <div class="services-divider">
+            <h3><i class="fas fa-home"></i> Limpieza de Tapices y Muebles</h3>
+            <p>Servicio profesional para tu hogar</p>
+        </div>
+
+        <!-- GRID DE OTROS SERVICIOS - 4 COLUMNAS -->
+        <div class="services-grid-others">
+            <!-- SILLAS -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chair"></i></div>
+                <h3>Sillas</h3>
+                <p><strong>Solo posadera:</strong><br>$5.000 c/u</p>
+                <p style="margin-top: 1rem;"><strong>Posadera y respaldo:</strong><br>$8.000 c/u</p>
+            </div>
+           
+            <!-- ALFOMBRAS -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-rug"></i></div>
+                <h3>Alfombras</h3>
+                <p><strong>Limpieza completa:</strong><br>$25.000</p>
+                <p style="margin-top: 1rem;"><strong>Cubrepiso / Muro a muro:</strong><br>+ $2.500 por m²</p>
+            </div>
+
+            <!-- SILLONES -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-couch"></i></div>
+                <h3>Sillones</h3>
+                <p><strong>Un Cuerpo:</strong> $15.000</p>
+                <p><strong>Dos Cuerpos:</strong> $20.000</p>
+                <p><strong>Tres Cuerpos:</strong> $25.000</p>
+                <p><strong>Sillón tipo L:</strong> desde $25.000</p>
+            </div>
+        
+            <!-- COLCHONES -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-bed"></i></div>
+                <h3>Colchones</h3>
+                <p><strong>Una Plaza:</strong> desde $25.000</p>
+                <p><strong>Plaza y media:</strong> desde $30.000</p>
+                <p><strong>Dos Plazas:</strong> desde $35.000</p>
+                <p><strong>Colchón King:</strong> desde $40.000</p>
+            </div>
+        </div>
+
+        <div class="alert-notice">
+        <i class="fas fa-info-circle"></i>
+        <span>Para servicios fuera de Nueva Imperial se cobrará un adicional por trayecto.</span>
+    </div>
+
+        <!-- NOTA FINAL -->
+        <div class="service-card" style="margin-top: 3rem; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h3>¿Otra comuna de la Región?</h3>
+            <p>Para otras comunas de la IX Región, podrás hacer la consulta en el botón <strong>Enviar Mensaje por WhatsApp</strong></p>
+        </div>
+    </section>
+
+    <!-- Galería Servicios -->
+    <section id="galeria" class="gallery">
+        <h2 class="section-title">Resultados Reales</h2>
+        <p class="section-subtitle">De algunos de nuestros trabajos.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Antes y Después 1.png" alt="Auto lavado - Antes y Después 1">
+                <div class="gallery-overlay">
+                    <h3>Resultado del primer proceso (2do caso)</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Antes y Después 2.png" alt="Auto lavado - Antes y Después 2">
+                <div class="gallery-overlay">
+                    <h3>Resultado final (1er caso)</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Antes y Después 3.png" alt="Lavado de Alfombra">
+                <div class="gallery-overlay">
+                    <h3>Lavado de Alfombra en proceso</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="Proceso de Lavado 1.mp4" type="video/mp4">
+                </video>
+                <div class="gallery-overlay">                
+                    <h3>Aspirado de Agua</h3>
+                </div>    
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="Tratamiento con Vapor.mp4" type="video/mp4">
+                </video>                
+                <div class="gallery-overlay">
+                    <h3>Tratamiento con Vapor</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <video controls>
+                    <source src="Limpieza a Fondo.mp4" type="video/mp4">
+                </video>
+                <div class="gallery-overlay">
+                    <h3>Limpieza a Fondo</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maquinaria -->
+    <section id="maquinaria" class="gallery" style="background-color: white;">
+        <h2 class="section-title">Maquinaria</h2>
+        <p class="section-subtitle">Utilizamos tecnología Kärcher, ya que es amigable con el medio ambiente</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Samsung - Aspiradora de Polvo.jpeg" alt="Aspiradora de Polvo">
+                <div class="gallery-overlay">
+                    <h3>Aspiradora de Polvo</h3>
+                    <p>Alta succión</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Karcher K3 - Hidrolavadora.jpeg" alt="Hidrolavadora">
+                <div class="gallery-overlay">
+                    <h3>Hidrolavadora</h3>
+                    <p>Alta Presión</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Karcher SC 2 - Vaporizadora.jpeg" alt="Vaporizadora">
+                <div class="gallery-overlay">
+                    <h3>Vaporizadora</h3>
+                    <p>Alto poder de Sanitización</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Karcher SE 4 - Aspiradora de Agua.jpeg" alt="Aspiradora de Agua">
+                <div class="gallery-overlay">
+                    <h3>Aspiradora de Agua</h3>
+                    <p>Alta Succión - Alto poder de Limpieza</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="Personaje SEDA - Ahorro Agua.png" alt="Ahorro Agua">
+                <div class="gallery-overlay">
+                <h3>Comprometidos con el Ahorro</h3>
+                <p>Nuestras maquinas ahorran agua</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="Personaje SEDA - Ahorro Electricidad.png" alt="Ahorro Electricidad">
+            <div class="gallery-overlay">
+                <h3>Comprometidos con el Ahorro</h3>
+                <p>Nuestras maquinas ahorran electricidad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros / Ubicación -->
+    <section id="nosotros" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Dichosamente de Nueva Imperial</h2>
+                <p>En SEDA comprendemos el valor de tu tiempo y el cariño que le tienes a tu vehículo y muebles. Por eso, llevamos nuestro servicio profesional directamente a tu hogar o lugar de trabajo en toda la comuna de Nueva Imperial y alrededores.</p>
+                <p>Somos un equipo local, comprometido con la calidad, la puntualidad y el cuidado del medio ambiente a través del uso responsable del agua y electricidad, ya que nuestras máquinas ahorran un <strong>80% de ambos suministros.</strong></p>
+                <ul class="about-features">
+                    <li><i class="fas fa-check-circle"></i> Atención en gran parte de la Región de la Araucanía (Zona Costa)</li>
+                    <li><i class="fas fa-check-circle"></i> Productos premium que cuidan la pintura y telas</li>
+                    <li><i class="fas fa-check-circle"></i> Equipos portátiles de última generación</li>
+                    <li><i class="fas fa-check-circle"></i> Garantía de satisfacción en cada trabajo</li>
+                </ul>
+            </div>
+            <!-- Sección de Ubicación / Mapa -->
+            <div class="about-image">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1397.1490549816656!2d-72.9464874730416!3d-38.74059696198559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961533b442101915%3A0xd08601b128bfa70a!2sSEDA%20Lavado%20de%20Autos%20y%20Tapices%20a%20Domicilio%20SpA!5e1!3m2!1ses!2scl!4v1784067399008!5m2!1ses!2scl" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Ubicación SEDA en Google Maps">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <h2 class="section-title">¡Agenda tu Cita Hoy!</h2>
+        <p class="section-subtitle"><strong>Cupos limitados por día para garantizar la máxima calidad.</strong></p>
+        
+        <div class="contact-box">
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">¿Listo para ver tu auto como nuevo?</p> 
+            <p style="margin-bottom: 2rem;"><strong>Escríbenos directamente a WhatsApp y coordina la visita en minutos.</strong></p>
+            <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20quiero%20agendar%20un%20servicio%20a%20domicilio%20en%20Nueva%20Imperial." class="btn-primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp
+            </a>
+        </div>
+            
+        <div class="contact-methods">
+            <a href="https://wa.me/56987464278" class="contact-item" target="_blank">
+                <img src="WhatsApp.png" alt="WhatsApp" class="contact-icon">
+                <span>+56 9 8746 4278</span>
+            </a>
+            <a href="https://wa.me/56986532515" class="contact-item" target="_blank">
+                <img src="WhatsApp.png" alt="WhatsApp" class="contact-icon">
+                <span>+56 9 8653 2515</span>
+            </a>
+            <a href="https://web.facebook.com/SEDAlavadoDeAutos" class="contact-item" target="_blank">
+                <img src="facebook.png" alt="Facebook" class="contact-icon">
+                <span>/SEDAlavadoDeAutos</span>
+            </a>
+            <a href="https://www.instagram.com/seda_lavadeautos" class="contact-item" target="_blank">
+                <img src="Instagram.png" alt="Instagram" class="contact-icon">
+                <span>@seda_lavadeautos</span>
+            </a>
+            <a href="https://www.tiktok.com/@seda_nva.imperial" class="contact-item" target="_blank">
+                <img src="TikTok.png" alt="TikTok" class="contact-icon">
+                <span>SEDA_Nva.Imperial</span>
+            </a>
+            <a href="https://www.threads.com/@seda_lavadeautos" class="contact-item" target="_blank">
+                <img src="Threads_(app).png" alt="Threads" class="contact-icon">
+                <span>seda_lavadeautos</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SEDA - Servicios de Lavado y Tapices a Domicilio. Nueva Imperial, Región de la Araucanía, Chile.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Todos los derechos reservados.</p>
+        <p>Desarrollado por &copy; Código 404 CS</p>
+    </footer>
+
+<!-- Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registrado con éxito:', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar Service Worker:', error);
+        });
+    });
+  }
+</script>
+
+<!-- Botón de instalación PWA -->
+<div id="install-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 1rem 2rem; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; cursor: pointer; font-weight: 600;">
+  <i class="fas fa-download"></i> Instalar App SEDA
+</div>
+
+<script>
+  let deferredPrompt;
+  const installBanner = document.getElementById('install-banner');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBanner.style.display = 'block';
+  });
+
+  installBanner.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('Usuario aceptó instalar la app');
+      }
+      deferredPrompt = null;
+      installBanner.style.display = 'none';
+    }
+  });
+
+  window.addEventListener('appinstalled', () => {
+    installBanner.style.display = 'none';
+    console.log('App instalada');
+  });
+</script>
+
+</body>
+</html>
