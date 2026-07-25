@@ -652,9 +652,95 @@
 .details-summary:hover {
     color: var(--primary-dark);
 }
+
+/* Barra de promesa de marca - Elegante y no invasiva */
+.promise-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark); /* Fondo oscuro para que se vea serio y premium */
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.4rem 0;
+    overflow: hidden;
+    z-index: 1001;
+    font-size: 0.7rem; /* Texto pequeño y sutil */
+    font-weight: 400;
+    letter-spacing: 1px; /* Espaciado entre letras para darle elegancia */
+    text-transform: uppercase; /* Mayúsculas para que parezca un lema oficial */
+}
+
+.promise-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: scrollPromise 50s linear infinite; /* Muy lento para que se lea con calma */
+    width: max-content;
+}
+
+.promise-track span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.promise-track span i {
+    margin-right: 8px;
+    color: var(--accent); /* El color cyan resalta sutilmente el icono */
+    font-size: 0.6rem;
+}
+
+.promise-track .separator {
+    padding: 0;
+    opacity: 0.3;
+    font-size: 0.5rem;
+}
+
+/* Ajustes para que el header y el hero no queden tapados por esta barra */
+header {
+    top: 28px; /* Altura aproximada de la barra de promesa */
+}
+
+.hero {
+    margin-top: 98px; /* 70px del header + 28px de la barra */
+}
+
+@keyframes scrollPromise {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Se pausa suavemente al pasar el mouse */
+.promise-marquee:hover .promise-track {
+    animation-play-state: paused;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .promise-marquee {
+        font-size: 0.6rem;
+        letter-spacing: 0.5px;
+        padding: 0.35rem 0;
+    }
+    header { top: 24px; }
+    .hero { margin-top: 94px; }
+}
     </style>
 </head>
 <body>
+    <!-- Barra de compromiso de marca -->
+<div class="promise-marquee">
+    <div class="promise-track">
+        <span><i class="fas fa-handshake"></i> En SEDA jamás ofreceremos lo que no podemos hacer</span>
+        <span class="separator">•</span>
+        <span><i class="fas fa-handshake"></i> Tecnología, dedicación y productos de alta calidad llevados hasta tu puerta</span>
+        <span class="separator">•</span>
+        <span><i class="fas fa-handshake"></i> Solo necesitamos conectarnos a tus redes de agua y electricidad cuando vamos a tu domicilio</span>
+        <span class="separator">•</span>
+        <span><i class="fas fa-handshake"></i> Nuestras maquinas son amigables con el medio ambiente ya que ahorran un 80% de suministros</span>
+        <span class="separator">•</span>
+    </div>
+</div>     
 
     <!-- Navegación -->
     <header>
