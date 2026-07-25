@@ -570,6 +570,88 @@
                 height: 40px;
             }
         }
+
+        /* Estilos para detalles desplegables */
+.service-details {
+    margin-top: 1rem;
+    background-color: var(--light);
+    border-radius: 8px;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-details[open] {
+    background-color: #e8f4fd;
+}
+
+.details-summary {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+    list-style: none; /* Oculta el triángulo por defecto */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+}
+
+.details-summary::-webkit-details-marker {
+    display: none; /* Para Safari/Chrome */
+}
+
+.details-summary i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotar el icono cuando está abierto */
+.service-details[open] .details-summary i {
+    transform: rotate(180deg);
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    animation: slideDown 0.3s ease;
+}
+
+.details-list li {
+    padding: 0.4rem 0;
+    color: var(--gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(0, 86, 179, 0.1);
+}
+
+.details-list li:last-child {
+    border-bottom: none;
+}
+
+.details-list li i {
+    color: var(--success);
+    font-size: 0.8rem;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect */
+.details-summary:hover {
+    color: var(--primary-dark);
+}
     </style>
 </head>
 <body>
@@ -623,28 +705,56 @@
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-car"></i></div>
                 <h3>Compacto - Servicio Básico</h3>
-                <p>Limpieza exterior</p>
-                <p>Renovador de neumáticos</p>
-                <p>Shampoo para Vehículos</p>
                 <h4>$10.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                        <li><i class="fas fa-check"></i> Shapoo para vehículos</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
+
                 <h3 style="margin-top: 1.5rem;">Compacto - Servicio Medium</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior</p>
                 <h4>$20.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior (aplicado de shampoo)</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Compacto - Servicio Full</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior completa</p>
-                <p>+ Limpieza de Tapicería</p>
-                <p>+ Desinfección a Vapor</p>
                 <h4>$35.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
+                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
+                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -652,28 +762,55 @@
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-car-side"></i></div>
                 <h3>Sedán - Servicio Básico</h3>
-                <p>Limpieza exterior</p>
-                <p>Renovador de neumáticos</p>
-                <p>Shampoo para Vehículos</p>
                 <h4>$15.000 (no incluye maletero)</h4>
+                
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza exterior</l>
+                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                        <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Medium</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior</p>
                 <h4>$25.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Full</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior completa</p>
-                <p>+ Limpieza de Tapicería</p>
-                <p>+ Desinfección a Vapor</p>
                 <h4>$40.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
+                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
+                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -681,28 +818,55 @@
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-truck"></i></div>
                 <h3>SUV / Furgones - Básico</h3>
-                <p>Limpieza exterior</p>
-                <p>Renovador de neumáticos</p>
-                <p>Shampoo para vehículos</p>
                 <h4>$20.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+            <i class="fas fa-chevron-down"></i> Ver detalle
+                </summary>
+                <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                    <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
+                </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">SUV / Furgones - Medium</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior</p>
                 <h4>$30.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                    <li><i class="fas fa-check"></i> Aspirado</li>
+                    <li><i class="fas fa-check"></i> Renovador de Plásticos</li>
+                    <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">SUV / Furgones - Full</h3>
-                <p>Limpieza interior completa</p>
-                <p>Aspirado</p>
-                <p>Renovador de Plásticos</p>
-                <p>Limpieza exterior completa</p>
-                <p>+ Limpieza de Tapicería</p>
-                <p>+ Desinfección a Vapor</p>
                 <h4>$45.000 (no incluye maletero)</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de Plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
+                        <li><i class="fas fa-check"></i> + Limpieza de Tapicería</li>
+                        <li><i class="fas fa-check"></i> + Desinfección a Vapor</li>
+                    </ul>
+                 </details>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
         </div>
@@ -723,6 +887,18 @@
                 <h3>Sillas</h3>
                 <p><strong>Solo posadera:</strong><br>$5.000 c/u</p>
                 <p style="margin-top: 1rem;"><strong>Posadera y respaldo:</strong><br>$8.000 c/u</p>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                    </ul>
+                 </details>
             </div>
            
             <!-- ALFOMBRAS -->
@@ -731,6 +907,21 @@
                 <h3>Alfombras</h3>
                 <p><strong>Limpieza completa:</strong><br>$25.000</p>
                 <p style="margin-top: 1rem;"><strong>Cubrepiso / Muro a muro:</strong><br>+ $2.500 por m²</p>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado de polvo</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo para alfombras</li>
+                        <li><i class="fas fa-check"></i> Aspirado de liquido (shampoo)</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
+                    </ul>
+                 </details>
             </div>
 
             <!-- SILLONES -->
@@ -741,6 +932,19 @@
                 <p><strong>Dos Cuerpos:</strong> $20.000</p>
                 <p><strong>Tres Cuerpos:</strong> $25.000</p>
                 <p><strong>Sillón tipo L:</strong> desde $25.000</p>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado de polvo</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
+                    </ul>
+                 </details>
             </div>
         
             <!-- COLCHONES -->
@@ -751,6 +955,20 @@
                 <p><strong>Plaza y media:</strong> desde $30.000</p>
                 <p><strong>Dos Plazas:</strong> desde $35.000</p>
                 <p><strong>Colchón King:</strong> desde $40.000</p>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado (solo si es necesario)</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y manchas</li>
+                        <li><i class="fas fa-check"></i> Sanitización</li>
+                        <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
+                    </ul>
+                 </details>
             </div>
         </div>
 
