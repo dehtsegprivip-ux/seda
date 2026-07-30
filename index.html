@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -268,10 +268,33 @@
             padding-top: 1rem;
             border-top: 2px solid var(--light);
         }
+        /* Botón de WhatsApp dentro de las tarjetas de servicio */
+        .btn-whatsapp-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: #25D366; /* Verde oficial de WhatsApp */
+        color: white;
+        text-decoration: none;
+        padding: 0.6rem 1rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+    }
+
+        .btn-whatsapp-card:hover {
+        background-color: #128C7E; /* Verde más oscuro al hacer hover */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+    }
 
         .services-divider {
-            margin: 4rem 0 2rem;
-            text-align: center;
+        margin: 4rem 0 2rem;
+        text-align: center;
         }
 
         .services-divider h3 {
@@ -804,6 +827,10 @@ header {
                         <li><i class="fas fa-check"></i> Shapoo para vehículos</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
 
@@ -822,6 +849,10 @@ header {
                         <li><i class="fas fa-check"></i> Limpieza exterior (aplicado de shampoo)</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Compacto - Servicio Full</h3>
@@ -841,6 +872,10 @@ header {
                         <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -861,6 +896,10 @@ header {
                         <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Medium</h3>
@@ -878,6 +917,10 @@ header {
                         <li><i class="fas fa-check"></i> Limpieza exterior</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Full</h3>
@@ -897,13 +940,17 @@ header {
                         <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
-            <!-- SUV/FURGONES -->            
+            <!-- SUV/CAMIONETAS -->            
             <div class="service-card">
-                <div class="service-icon"><i class="fas fa-truck"></i></div>
-                <h3>SUV / Furgones - Básico</h3>
+                <div class="service-icon"><i class="fas fa-truck-pickup"></i></div>
+                <h3>SUV / Camionetas - Básico</h3>
                 <h4>$20.000 (no incluye maletero)</h4>
 
                 <!-- Detalles desplegables -->
@@ -917,9 +964,13 @@ header {
                     <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
                 </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
-                <h3 style="margin-top: 1.5rem;">SUV / Furgones - Medium</h3>
+                <h3 style="margin-top: 1.5rem;">SUV / Camionetas - Medium</h3>
                 <h4>$30.000 (no incluye maletero)</h4>
 
                 <!-- Detalles desplegables -->
@@ -934,9 +985,13 @@ header {
                     <li><i class="fas fa-check"></i> Limpieza exterior</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
-                <h3 style="margin-top: 1.5rem;">SUV / Furgones - Full</h3>
+                <h3 style="margin-top: 1.5rem;">SUV / Camionetas - Full</h3>
                 <h4>$45.000 (no incluye maletero)</h4>
 
                 <!-- Detalles desplegables -->
@@ -953,11 +1008,217 @@ header {
                         <li><i class="fas fa-check"></i> + Desinfección a Vapor</li>
                     </ul>
                  </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
+
+            <!-- Furgones y Vehículos XL -->
+             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-truck"></i></div>
+                <h3>Furgones y Vehículos XL - Básico</h3>
+                <h4>$25.000</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                        <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
+                    </ul>
+                 </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+
+                <h3 style="margin-top: 1.5rem;">Furgones y Vehículos XL - Medium</h3>
+                <h4>$35.000</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
+                    </ul>
+                 </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+
+                 <h3 style="margin-top: 1.5rem;">Furgones y Vehículos XL - Full</h3>
+                 <h4>$50.000</h4>
+
+                 <!-- Detalles desplegables -->
+                  <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
+                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
+                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
+                    </ul>
+                  </details>
+                  <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+             </div>
+
+             <!-- Motos -->
+              <div class="service-card">
+                <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+                <h3 style="margin-top: 1.5rem;">Motos - Básico</h3>
+                <h4>$8.000</h4>
+
+                <!-- Detalles desplegables -->
+                 <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza completa</li>
+                        <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>                        
+                    </ul>
+                 </details>
+                 <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+              
+              <h3 style="margin-top: 1.5rem;">Motos - Medium</h3>
+              <h4>$15.000</h4>
+
+              <!-- Detalles desplegables -->
+               <details class="service-details">
+                <summary class="details-summary">
+                    <i class="fas fa-chevron-down"></i> Ver detalle
+                </summary>
+                <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza completa</li>
+                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
+                </ul>
+               </details>
+               <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+
+               <h3 style="margin-top: 1.5rem;">Motos - Full</h3>
+               <h4>$25.000</h4>
+
+               <!-- Detalles desplegables -->
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Limpieza completa</li>
+                        <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                        <li><i class="fas fa-check"></i> Limpieza de tablero</li>
+                        <li><i class="fas fa-check"></i> Desinfección de asientos</li>
+                        <li><i class="fas fa-check"></i> Pulido de plásticos</li>
+                    </ul>
+                </details>
+                <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+        </div>
+
+        <!-- Cuatrimotos -->
+         <div class="service-card">
+            <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+            <h3 style="margin-top: 1.5rem;">Cuatrimotos - Básico</h3>
+            <h4>$12.000</h4>
+            
+            <!-- Detalles desplegables -->
+             <details class="service-details">
+                <summary class="details-summary">
+                    <i class="fas fa-chevron-down"></i> Ver detalle
+                </summary>
+                <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza completa</li>
+                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                </ul>
+             </details>
+             <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20básico" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+
+             <h3 style="margin-top: 1.5rem;">Cuatrimotos - Medium</h3>
+             <h4>$22.000</h4>
+
+             <!-- Detalles desplegables -->
+              <details class="service-details">
+                <summary class="details-summary">
+                    <i class="fas fa-chevron-down"></i> Ver detalle
+                </summary>
+                <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza completa</li>
+                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
+                </ul>
+             </details>
+             <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20medium" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+
+             <h3 style="margin-top: 1.5rem;">Cuatrimotos - Full</h3>
+             <h4>$35.000</h4>
+
+             <!-- Detalles desplegables -->
+              <details class="service-details">
+                <summary class="details-summary">
+                    <i class="fas fa-chevron-down"></i> Ver detalle
+                </summary>
+                <ul class="details-list">
+                    <li><i class="fas fa-check"></i> Limpieza completa</li>
+                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
+                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
+                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
+                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
+                    <li><i class="fas fa-check"></i> Desinfección de asientos</li>
+                    <li><i class="fas fa-check"></i> Pulido de plásticos</li>
+                </ul>
+              </details>
+              <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20full" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
+         </div>
         </div>
         
         <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--gray);"><strong>*Nota:</strong> La limpieza de maletero se podrá incluir en el valor de los servicios dependiendo del grado de suciedad.</p>
+        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--success); text-align: center;">
+            <i class="fas fa-info-circle"></i> Precios pueden variar según el grado de suciedad del vehículo
+        </p>
 
         <!-- SEPARADOR PARA OTROS SERVICIOS -->
         <div class="services-divider">
@@ -985,6 +1246,9 @@ header {
                         <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
                     </ul>
                  </details>
+                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
             </div>
            
             <!-- ALFOMBRAS -->
@@ -1008,6 +1272,9 @@ header {
                         <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
                     </ul>
                  </details>
+                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20alfombras" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
             </div>
 
             <!-- SILLONES -->
@@ -1031,6 +1298,9 @@ header {
                         <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
                     </ul>
                  </details>
+                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillones" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
             </div>
         
             <!-- COLCHONES -->
@@ -1055,6 +1325,9 @@ header {
                         <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
                     </ul>
                  </details>
+                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20colchones" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                  </a>
             </div>
         </div>
 
@@ -1235,6 +1508,10 @@ header {
             <a href="https://www.threads.com/@seda_lavadeautos" class="contact-item" target="_blank">
                 <img src="Threads_(app).png" alt="Threads" class="contact-icon">
                 <span>seda_lavadeautos</span>
+            </a>
+            <a href="https://www.youtube.com/@SEDA_Nva.Imperial" class="contact-item" target="_blank">
+                <img src="Youtube.png" alt="Youtube" class="contact-icon">
+                <span>@SEDA_Nva.Imperial</span>
             </a>
         </div>
     </section>
