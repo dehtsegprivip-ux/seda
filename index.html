@@ -1,9 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SEDA - Servicio profesional de lavado de autos y limpieza de tapices a domicilio en Nueva Imperial, Región de la Araucanía. Precios accesibles y descuentos de inauguración.">
+    <link rel="manifest" href="/manifest.json">
     <title>SEDA - Lavado de Autos y Tapices a Domicilio</title>
     
     <!-- Favicon corregido (ico usa image/x-icon) -->
@@ -748,6 +749,35 @@ header {
     header { top: 24px; }
     .hero { margin-top: 94px; }
 }
+
+#botonArriba {
+  display: none; /* Oculto al principio */
+  position: fixed; /* Posición fija en la pantalla */
+  bottom: 20px; /* Distancia desde abajo */
+  right: 20px; /* Distancia desde la derecha */
+  z-index: 99; /* Se asegura de estar por encima de otros elementos */
+  border: none;
+  outline: none;
+  background-color: #333; /* Color de fondo */
+  color: white; /* Color de la flecha */
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%; /* Botón redondo */
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+#botonArriba:hover {
+  background-color: #555; /* Color al pasar el mouse */
+}
+
+/* Desplazamiento suave para toda la página */
+html {
+  scroll-behavior: smooth;
+}
     </style>
 </head>
 <body>
@@ -824,7 +854,7 @@ header {
                     <ul class="details-list">
                         <li><i class="fas fa-check"></i> Limpieza exterior</li>
                         <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                        <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
+                        <li><i class="fas fa-check"></i> Shapoo para vehículos</li>
                     </ul>
                  </details>
                  <!-- Botón WhatsApp -->
@@ -1220,7 +1250,189 @@ header {
             <i class="fas fa-info-circle"></i> Precios pueden variar según el grado de suciedad del vehículo
         </p>
 
-        <!-- SEPARADOR PARA OTROS SERVICIOS -->
+        <!-- SEPARADOR PARA SERVICIO DE LIMPIEZA DE TAPICERIA AUTOMOTRIZ -->
+         <div class="services-divider">
+            <h3><i class="fas fa-car"></i> Limpieza de Tapicería Automotriz</h3>
+            <p>Servicio profesional para tu Vehículo</p>
+         </div>
+
+         <!-- GRID DE SERVICIO DE LIMPIEZA DE TAPICERIA AUTOMOTRIZ - 4 COLUMNAS -->
+          <div class="services-grid-others">
+            <!-- Tapices Vehículo Compato -->
+             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-soap"></i></div>
+                <h3>Solo tapiz vehículo compacto</h3>
+                <h4>$25.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+             </div>
+             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-soap"></i></div>
+                <h3>Solo tapiz vehículo sedán</h3>
+                <h4>$30.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+             </div>
+             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-soap"></i></div>
+                <h3>Solo tapiz vehiculo SUV</h3>
+                <h4>$35.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+             </div>
+             <div class="service-card">
+                <div class="service-icon"><i class="fas fa-soap"></i></div>
+                <h3>Solo tapiz furgón y vehículos XL</h3>
+                <h4>$45.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+             </div>
+             </div>
+
+        <!-- SEPARADOR PARA SERVICIO DE LIMPIEZA DE MALETEROS DE VEHÍCULOS -->
+         <div class="services-divider">
+            <h3><i class="fas fa-car"></i> Limpieza de Maletero Automotriz</h3><i class="fas fa-suitcase"></i>
+            <p>Servicio profesional para tu vehículo</p>
+         </div>
+
+         <!-- GRID DE LIMPIEZA MALETEROS - 4 COLUMNAS -->
+          <div class="services-grid-others">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-suitcase"></i></div>
+                <h3>Maletero vehículo compacto</h3>
+                <h4>$5.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>                
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-suitcase"></i></div>
+                <h3>Maletero vehículo sedán</h3>
+                <h4>$10.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+            </div>
+            <div class="service-card">
+            <div class="service-icon"><i class="fas fa-suitcase"></i></div>
+                <h3>Maletero vehículos SUV</h3>
+                <h4>$15.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+          </div>
+          <div class="service-card">
+          <div class="service-icon"><i class="fas fa-suitcase"></i></div>
+                <h3>Maletero furgón y vehículos XL</h3>
+                <h4>$20.000</h4>
+                <details class="service-details">
+                    <summary class="details-summary">
+                        <i class="fas fa-chevron-down"></i> Ver detalle
+                    </summary>
+                    <ul class="details-list">
+                        <li><i class="fas fa-check"></i> Aspirado</li>
+                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
+                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
+                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
+                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
+                    </ul>
+                </details>
+                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
+                    <i class="fas fa-whatsapp"></i> Más información
+                </a>
+
+           </div>
+           </div>          
+
+        <!-- SEPARADOR PARA SERVICIO DE LIMPIEZA DE TAPICES Y MUEBLES -->
         <div class="services-divider">
             <h3><i class="fas fa-home"></i> Limpieza de Tapices y Muebles</h3>
             <p>Servicio profesional para tu hogar</p>
@@ -1516,12 +1728,18 @@ header {
         </div>
     </section>
 
+    <button onclick="subirArriba()" id="botonArriba" title="Ir arriba">▲</button>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 SEDA - Servicios de Lavado de Autos y Tapices a Domicilio. Nueva Imperial, Región de la Araucanía, Chile.</p>
+        <p>&copy; 2026 SEDA - Servicios de Lavado y Tapices a Domicilio. Nueva Imperial, Región de la Araucanía, Chile.</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">Todos los derechos reservados.</p>
         <p>Desarrollado por &copy; Código 404 CS</p>
+        <p id="offlineInfo">
+            <strong>Estamos trabajando para mejorar la experincia del usuario</strong>
+        </p>
     </footer>
+
 
 <!-- Service Worker Registration -->
 <script>
@@ -1569,6 +1787,31 @@ header {
     installBanner.style.display = 'none';
     console.log('App instalada');
   });
+</script>
+
+<script>
+// Obtener el botón
+const miBoton = document.getElementById("botonArriba");
+
+// Escuchar el evento de scroll (desplazamiento) en la página
+window.onscroll = function() {
+  mostrarUocultarBoton();
+};
+
+function mostrarUocultarBoton() {
+  // Si se baja más de 300px desde el tope, se muestra el botón; si no, se oculta
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    miBoton.style.display = "block";
+  } else {
+    miBoton.style.display = "none";
+  }
+}
+
+// Función que ejecuta el botón al hacer clic para subir
+function subirArriba() {
+  document.body.scrollTop = 0; // Para navegadores Safari
+  document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+}
 </script>
 
 </body>
