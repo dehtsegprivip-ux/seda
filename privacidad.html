@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidad y Protección de Datos Personales de SEDA SpA en conformidad con la normativa vigente en Chile.">
+    <title>SEDA - Política de Privacidad</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="SEDA-SIN-FONDO.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos CSS heredados de la página principal -->
+    <style>
+        :root {--primary: #0056b3; --primary-dark: #003d82; --accent: #00c4cc; --light: #f8f9fa; --dark: #212529; --gray: #6c757d; --success: #28a745;}
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        html {scroll-behavior: smooth; scroll-padding-top: 80px;}
+        body {font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; background-color: #ffffff;}
+        h1, h2, h3, h4 {font-family: 'Montserrat', sans-serif; font-weight: 700;}
+
+        /* Navegación */
+        .logo {display: flex; align-items: center; text-decoration: none; font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: -1px;}
+        .logo-img {height: 45px; width: auto; object-fit: contain; display: block; transition: transform 0.3s ease;}
+        .logo-img:hover {transform: scale(1.05);}
+        header {background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 28px; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+        nav {max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;}
+        .nav-links {display: flex; list-style: none; gap: 2rem;}
+        .nav-links a {text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s ease; font-size: 0.95rem;}
+        .nav-links a:hover {color: var(--primary);}
+        .btn-nav {background-color: var(--success); color: white !important; padding: 0.5rem 1.2rem; border-radius: 50px; transition: transform 0.3s ease, background-color 0.3s ease !important;}
+        .btn-nav:hover {background-color: #218838; transform: translateY(-2px);}
+
+        /* Contenido de Política de Privacidad */
+        .legal-container {
+            max-width: 900px;
+            margin: 130px auto 5rem auto;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+        }
+
+        .legal-container h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            display: block;
+            border-bottom: 1px solid var(--light);
+            padding-bottom: 1rem;
+        }
+
+        .legal-container h2 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-container p {
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .legal-container ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-container li {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .legal-container strong {
+            color: var(--dark);
+        }
+
+        .highlight-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Barra de promesa de marca */
+        .promise-marquee {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--dark);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.4rem 0;
+            overflow: hidden;
+            z-index: 1001;
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .promise-track {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: scrollPromise 50s linear infinite;
+            width: max-content;
+        }
+
+        .promise-track span {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .promise-track span i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        .promise-track .separator {
+            padding: 0;
+            opacity: 0.3;
+            font-size: 0.5rem;
+        }
+
+        @keyframes scrollPromise {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .promise-marquee:hover .promise-track {
+            animation-play-state: paused;
+        }
+
+        /* Botón Arriba */
+        #botonArriba {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        #botonArriba:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .legal-container { margin: 110px 1rem 3rem 1rem; padding: 2rem 1.2rem; }
+            .promise-marquee { font-size: 0.6rem; }
+            header { top: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de compromiso de marca -->
+    <div class="promise-marquee">
+        <div class="promise-track">
+            <span><i class="fas fa-handshake"></i> En SEDA jamás ofreceremos lo que no podemos hacer</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-handshake"></i> Tecnología, dedicación y productos de alta calidad llevados hasta tu puerta</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-handshake"></i> Solo necesitamos conectarnos a tus redes de agua y electricidad cuando vamos a tu domicilio</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-handshake"></i> Nuestras máquinas son amigables con el medio ambiente ya que ahorran un 80% de suministros</span>
+            <span class="separator">•</span>
+        </div>
+    </div>     
+
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="SEDA SIN FONDO.png" alt="SEDA - Lavado de Autos y Tapices a Domicilio" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#galeria">Galería</a></li>
+                <li><a href="index.html#maquinaria">Maquinaria</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#contacto" class="btn-nav"><i class="fab fa-whatsapp"></i> Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Legal: Política de Privacidad -->
+    <main>
+        <div class="legal-container">
+            <h1>Política de Privacidad y Protección de Datos Personales</h1>
+            <span class="legal-date">Última actualización: Octubre de 2026</span>
+
+            <p>En <strong>SEDA SpA</strong> (en adelante, "SEDA" o "la Empresa"), valoramos y respetamos profundamente la privacidad de nuestros clientes y usuarios en Nueva Imperial y toda la Región de la Araucanía. La presente Política de Privacidad regula el tratamiento de los datos personales recopilados a través de nuestro sitio web y canales de atención directa, en estricto cumplimiento con la legislación chilena vigente —en particular la <strong>Ley N° 19.628 sobre Protección de la Vida Privada</strong> y su modernización a través de la <strong>Ley N° 21.719</strong>—, así como incorporando estándares internacionales de transparencia y seguridad.</p>
+
+            <h2>1. Responsable del Tratamiento de Datos</h2>
+            <p>El responsable del resguardo y tratamiento de los datos personales es <strong>Inversiones y Servicios de Lavado Automotriz Detailling SPA (SEDA SpA)</strong>, domiciliada legalmente en Nueva Imperial, Región de la Araucanía, Chile. Cualquier consulta o requerimiento puede gestionarse de forma directa a través de nuestros canales oficiales de contacto.</p>
+
+            <h2>2. Datos que Recopilamos</h2>
+            <p>Para coordinar nuestros servicios de lavado de vehículos y limpieza de tapices a domicilio, SEDA recopila únicamente los datos estrictamente necesarios provistos de forma voluntaria por el titular:</p>
+            <ul>
+                <li><strong>Datos de Identificación y Contacto:</strong> Nombre completo, número de teléfono / WhatsApp.</li>
+                <li><strong>Datos de Ubicación:</strong> Comuna (Nueva Imperial, Carahue, Chol-Chol, Labranza, Temuco, Padre Las Casas u otras) y dirección exacta para la ejecución del servicio a domicilio.</li>
+                <li><strong>Datos de Servicio:</strong> Preferencias de cotización, tipo de vehículo o mobiliario y detalles del servicio solicitado mediante nuestros formularios interactivos.</li>
+            </ul>
+
+            <h2>3. Finalidad del Tratamiento</h2>
+            <p>Los datos personales recopilados serán tratados lícitamente bajo los principios de finalidad y proporcionalidad, con las siguientes finalidades exclusivas:</p>
+            <ul>
+                <li>Coordinar, agendar y ejecutar los servicios profesionales de lavado y sanitización a domicilio.</li>
+                <li>Establecer canales de comunicación directa y fluida con el cliente a través de mensajería (WhatsApp) o llamadas telefónicas.</li>
+                <li>Calcular tarifas y recargos logísticos por trayecto según la ubicación geográfica del cliente.</li>
+                <li>Cumplir con las obligaciones de índole administrativa, contable y tributaria exigidas por la legislación chilena.</li>
+            </ul>
+
+            <h2>4. Bases de Licitud</h2>
+            <p>El tratamiento de datos por parte de SEDA se sustenta en el consentimiento previo, libre, expreso, específico e informado otorgado por el usuario al enviar sus datos, así como en la ejecución de medidas precontractuales y contractuales asociadas a la contratación de nuestros servicios a domicilio.</p>
+
+            <h2>5. Derechos de los Titulares (Derechos ARSOP)</h2>
+            <p>De conformidad con la normativa nacional e internacional, los titulares de los datos conservan en todo momento los derechos irrenunciables de <strong>Acceso, Rectificación, Supresión, Oposición y Portabilidad (ARSOP)</strong>, los cuales comprenden:</p>
+            <ul>
+                <li><strong>Acceso:</strong> Conocer qué datos personales tratamos y con qué fin.</li>
+                <li><strong>Rectificación:</strong> Solicitar la corrección de información inexacta, incompleta o desactualizada.</li>
+                <li><strong>Supresión o Eliminación:</strong> Requerir la eliminación de sus datos cuando ya no sean necesarios para los fines que fueron recolectados.</li>
+                <li><strong>Oposición y Bloqueo:</strong> Oponerse al tratamiento de sus datos para fines específicos.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <i class="fas fa-info-circle"></i> Para ejercer cualquiera de estos derechos, el usuario puede enviar una solicitud formal directamente a nuestros canales de atención en WhatsApp indicando claramente su requerimiento. El plazo de respuesta se ajustará a los estándares legales vigentes.
+            </div>
+
+            <h2>6. Seguridad y Confidencialidad</h2>
+            <p>SEDA implementa medidas de seguridad técnicas, físicas y organizativas razonables para proteger los datos personales contra accesos no autorizados, pérdida, alteración o divulgación indebida. Nuestros procedimientos internos aseguran el más alto estándar de secreto y confidencialidad respecto a la información de nuestros clientes.</p>
+
+            <h2>7. Modificaciones a la Política de Privacidad</h2>
+            <p>Nos reservamos el derecho de actualizar o modificar esta Política de Privacidad en cualquier momento para reflejar cambios normativos u operativas del servicio. Cualquier modificación significativa será debidamente publicada en este mismo sitio web.</p>
+        </div>
+    </main>
+
+    <button onclick="subirArriba()" id="botonArriba" title="Ir arriba">▲</button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SEDA - Servicios de Lavado y Tapices a Domicilio. Nueva Imperial, Región de la Araucanía, Chile.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Todos los derechos reservados. | <a href="privacidad.html" style="color: var(--accent); text-decoration: none;">Política de Privacidad</a></p>
+        <p>Desarrollado por &copy; Código 404 CS</p>
+    </footer>
+
+    <!-- Script Botón Arriba -->
+    <script>
+        const miBoton = document.getElementById("botonArriba");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                miBoton.style.display = "block";
+            } else {
+                miBoton.style.display = "none";
+            }
+        };
+        function subirArriba() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
