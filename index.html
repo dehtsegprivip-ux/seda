@@ -36,748 +36,164 @@
      <link rel="icon" type="image/png" sizes="16x16" href="icon-192x192.png">
 
     <style>
-        :root {
-            --primary: #0056b3;
-            --primary-dark: #003d82;
-            --accent: #00c4cc;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #28a745;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            /* Evita que el menú fijo tape los títulos al hacer scroll */
-            scroll-padding-top: 80px; 
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
+        :root {--primary: #0056b3; --primary-dark: #003d82; --accent: #00c4cc; --light: #f8f9fa; --dark: #212529; --gray: #6c757d; --success: #28a745;}
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        html {scroll-behavior: smooth; /* Evita que el menú fijo tape los títulos al hacer scroll */ scroll-padding-top: 80px;}
+        body {font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; background-color: #ffffff;}
+        h1, h2, h3, h4 {font-family: 'Montserrat', sans-serif; font-weight: 700;}
 
         /* Navegación */
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -1px;
-        }
-
-        .logo-img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .btn-nav {
-            background-color: var(--success);
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            transition: transform 0.3s ease, background-color 0.3s ease !important;
-        }
-
-        .btn-nav:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
+        .logo {display: flex; align-items: center; text-decoration: none; font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: -1px;}
+        .logo-img {height: 45px; width: auto; object-fit: contain; display: block; transition: transform 0.3s ease;}
+        .logo-img:hover {transform: scale(1.05);}
+        header {background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+        nav {max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;}
+        .nav-links {display: flex; list-style: none; gap: 2rem;}
+        .nav-links a {text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s ease; font-size: 0.95rem;}
+        .nav-links a:hover {color: var(--primary);}
+        .btn-nav {background-color: var(--success);color: white !important;padding: 0.5rem 1.2rem;border-radius: 50px;transition: transform 0.3s ease, background-color 0.3s ease !important;}
+        .btn-nav:hover {background-color: #218838;transform: translateY(-2px);}
 
         /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(135deg, rgba(0, 86, 179, 0.9), rgba(0, 196, 204, 0.8)), url('Letrero Publicitario.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--dark);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 196, 204, 0.4);
-        }
-
-        .btn-primary:hover {
-            background-color: #00aeb5;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 196, 204, 0.6);
-        }
+        .hero {margin-top: 70px;background: linear-gradient(135deg, rgba(0, 86, 179, 0.9), rgba(0, 196, 204, 0.8)), url('Letrero Publicitario.png');background-size: cover;background-position: center;color: white;padding: 6rem 2rem;text-align: center;min-height: 80vh;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+        .hero h1 {font-size: 3rem;margin-bottom: 1rem;line-height: 1.2;}
+        .hero p {font-size: 1.2rem;max-width: 700px;margin-bottom: 2rem;opacity: 0.9;}
+        .btn-primary {display: inline-block;background-color: var(--accent);color: var(--dark);padding: 1rem 2.5rem;border-radius: 50px;text-decoration: none;font-weight: 700;font-size: 1.1rem;transition: all 0.3s ease;box-shadow: 0 4px 15px rgba(0, 196, 204, 0.4);}
+        .btn-primary:hover {background-color: #00aeb5;transform: translateY(-3px);box-shadow: 0 6px 20px rgba(0, 196, 204, 0.6);}
 
         /* Servicios */
-        .services {
-            padding: 5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--gray);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        .services-grid-vehicles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .services-grid-others {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid var(--accent);
-            text-align: left;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            text-align: center;
-        }
-
-        .service-card p {
-            color: var(--gray);
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .service-card h4 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 2px solid var(--light);
-        }
-        /* Botón de WhatsApp dentro de las tarjetas de servicio */
-        .btn-whatsapp-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background-color: #25D366; /* Verde oficial de WhatsApp */
-        color: white;
-        text-decoration: none;
-        padding: 0.6rem 1rem;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-top: 1.5rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
-    }
-
-        .btn-whatsapp-card:hover {
-        background-color: #128C7E; /* Verde más oscuro al hacer hover */
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
-    }
-
-        .services-divider {
-        margin: 4rem 0 2rem;
-        text-align: center;
-        }
-
-        .services-divider h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .services-divider p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
+        .services {padding: 5rem 2rem;max-width: 1400px;margin: 0 auto;text-align: center;}
+        .section-title {font-size: 2.2rem;color: var(--primary);margin-bottom: 1rem;}
+        .section-subtitle {color: var(--gray);margin-bottom: 3rem;font-size: 1.1rem;}
+        .services-grid-vehicles {display: grid;grid-template-columns: repeat(3, 1fr);gap: 2rem;margin-top: 3rem;}
+        .services-grid-others {display: grid;grid-template-columns: repeat(4, 1fr);gap: 2rem;margin-top: 3rem;}
+        .service-card {background: white;border-radius: 15px;padding: 2rem 1.5rem;box-shadow: 0 10px 30px rgba(0,0,0,0.08);transition: transform 0.3s ease, box-shadow 0.3s ease;border-top: 4px solid var(--accent);text-align: left;}
+        .service-card:hover {transform: translateY(-10px);box-shadow: 0 15px 40px rgba(0,0,0,0.12);}
+        .service-icon {font-size: 3rem;color: var(--primary);margin-bottom: 1.5rem;text-align: center;}
+        .service-card h3 {font-size: 1.3rem;margin-bottom: 1rem;color: var(--dark);text-align: center;}
+        .service-card p {color: var(--gray);margin-bottom: 0.8rem;font-size: 0.95rem;}
+        .service-card h4 {color: var(--primary);font-size: 1.1rem;margin-top: 1rem;padding-top: 1rem;border-top: 2px solid var(--light);}
+               
         /* Galería y Maquinaria */
-        .gallery {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: #fafafa;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            justify-items: center;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            cursor: pointer;
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 4/3;
-            background-color: white;
-        }
-
-        .gallery-item img,
-        .gallery-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            display: block;
-        }
-
-        .gallery-item:hover img,
-        .gallery-item:hover video {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 86, 179, 0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-overlay h2,
-        .gallery-overlay h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
+        .gallery {padding: 5rem 2rem;max-width: 1200px;margin: 0 auto;text-align: center;background-color: #fafafa;}
+        .gallery-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 2rem;margin-top: 3rem;justify-items: center;}
+        .gallery-item {position: relative;border-radius: 15px;overflow: hidden;box-shadow: 0 5px 20px rgba(0,0,0,0.1);cursor: pointer;width: 100%;max-width: 400px;aspect-ratio: 4/3;background-color: white;}
+        .gallery-item img, .gallery-item video {width: 100%;height: 100%;object-fit: cover;transition: transform 0.5s ease;display: block;}
+        .gallery-item:hover img, .gallery-item:hover video {transform: scale(1.1);}
+        .gallery-overlay {position: absolute;bottom: 0;left: 0;right: 0;background: linear-gradient(to top, rgba(0, 86, 179, 0.9), transparent);padding: 2rem 1.5rem 1.5rem;color: white;transform: translateY(100%);transition: transform 0.3s ease;}
+        .gallery-item:hover .gallery-overlay {transform: translateY(0);}
+        .gallery-overlay h2, .gallery-overlay h3 {font-family: 'Montserrat', sans-serif;font-weight: 600;font-size: 1.2rem;margin-bottom: 0.5rem;}
 
         /* Nosotros / Ubicación */
-        .about {
-            background-color: var(--light);
-            padding: 5rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: var(--gray);
-            font-size: 1.05rem;
-        }
-
-        .about-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .about-features li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 600;
-        }
-
-        .about-features i {
-            color: var(--success);
-        }
-
-        .about-image {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 86, 179, 0.2);
-        }
-
-        .about-image iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 20px;
-        }
+        .about {background-color: var(--light);padding: 5rem 2rem;}
+        .about-container {max-width: 1200px;margin: 0 auto;display: grid;grid-template-columns: 1fr 1fr;gap: 4rem;align-items: center;}
+        .about-text h2 {font-size: 2.2rem;color: var(--primary);margin-bottom: 1.5rem;}
+        .about-text p {margin-bottom: 1rem;color: var(--gray);font-size: 1.05rem;}
+        .about-features {list-style: none;margin-top: 1.5rem;}
+        .about-features li {margin-bottom: 0.8rem;display: flex;align-items: center;gap: 0.8rem;font-weight: 600;}
+        .about-features i {color: var(--success);}
+        .about-image {background: linear-gradient(45deg, var(--primary), var(--accent));border-radius: 20px;height: 400px;display: flex;align-items: center;justify-content: center;overflow: hidden;box-shadow: 0 20px 40px rgba(0, 86, 179, 0.2);}
+        .about-image iframe {width: 100%;height: 100%;border: 0;border-radius: 20px;}
 
         /* Contacto */
-        .contact {
-            padding: 5rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .contact {padding: 5rem 2rem;max-width: 800px;margin: 0 auto;text-align: center;}
+        .contact-box {background: white;padding: 3rem;border-radius: 30px;box-shadow: 0 10px 40px rgba(0,0,0,0.1);margin-top: 2rem;}
+        .contact-methods {display: flex;justify-content: center;gap: 2rem;margin-top: 3rem;flex-wrap: wrap;}
+        .contact-item {display: flex;flex-direction: column;align-items: center;gap: 0.8rem;text-decoration: none;color: var(--dark);transition: all 0.3s ease;padding: 1rem;border-radius: 15px;background-color: var(--light);min-width: 120px;}
+        .contact-item:hover {transform: translateY(-5px);box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);background-color: white;}
+        .contact-icon {width: 48px;height: 48px;object-fit: contain;transition: transform 0.3s ease;}
+        .contact-item:hover .contact-icon {transform: scale(1.1);}
+        .contact-item span {font-size: 0.9rem;font-weight: 600;text-align: center;transition: color 0.3s ease;}
+        .contact-item:hover span {color: var(--primary);}
 
-        .contact-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
+        /* Cotización y Contrato de Servicios */
+        .form-container {background-color: #ffffff;padding: 30px;border-radius: 15px;box-shadow: 0 10px 30px rgba(0,0,0,0.1);max-width: 650px;width: 100%;border-top: 5px solid var(--primary);margin: 0 auto;}
+        .form-header {text-align: center;margin-bottom: 25px;}
+        .form-header h2 {font-family: 'Montserrat', sans-serif;color: var(--primary);font-size: 1.8rem;margin-bottom: 5px;}
+        .form-header p {color: var(--gray);font-size: 0.95rem;}
+        .form-group {margin-bottom: 18px;}
+        label {display: block;margin-bottom: 6px;font-weight: 600;color: var(--dark);font-size: 0.95rem;}
+        input[type="text"],
+        input[type="tel"],
+        select {width: 100%;padding: 12px;border: 1px solid #ccc;border-radius: 8px;box-sizing: border-box;font-family: inherit;font-size: 0.95rem;transition: border-color 0.3s ease;}
+        input:focus, select:focus {outline: none;border-color: var(--primary);}
+        
+        /* Contenedor del detalle del servicio */
+        .servicio-detalle {display: none;background-color: #e8f4fd;border-left: 4px solid var(--primary);padding: 20px;margin-top: 20px;border-radius: 8px;animation: fadeIn 0.3s ease;}
+        @keyframes fadeIn {from { opacity: 0; transform: translateY(-5px); }to { opacity: 1; transform: translateY(0); }}    
+        .servicio-detalle h3 {font-family: 'Montserrat', sans-serif;color: var(--primary);margin-top: 0;margin-bottom: 10px;font-size: 1.2rem;}
+        .precio-box {background-color: #ffffff;padding: 10px 15px;border-radius: 6px;display: inline-block;margin: 10px 0;border: 1px solid rgba(0, 86, 179, 0.2);}
+        .precio {font-size: 1.3em;color: var(--success);font-weight: bold;}
+        .details-list {list-style: none;padding: 0;margin: 10px 0;}
+        .details-list li {padding: 4px 0;color: var(--dark);font-size: 0.9rem;display: flex;align-items: center;gap: 8px;}
+        .details-list li i {color: var(--success);font-size: 0.85rem;}
+        .observaciones {font-size: 0.85rem;color: var(--gray);margin-top: 10px;padding-top: 10px;border-top: 1px dashed #ccc;}
+        .btn-agendar {width: 100%;background-color: #25D366; /* Verde oficial WhatsApp */color: white;padding: 14px;border: none;border-radius: 50px;font-size: 1rem;font-weight: 700;cursor: pointer;margin-top: 20px;display: flex;align-items: center;justify-content: center;gap: 10px;transition: all 0.3s ease;box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);}
+        .btn-agendar:hover {background-color: #128C7E;transform: translateY(-2px);}
+        .seccion-formulario{display:block;padding:5rem 2rem;background-color:#f4f6f9;width:100%}
 
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-            color: var(--dark);
-            transition: all 0.3s ease;
-            padding: 1rem;
-            border-radius: 15px;
-            background-color: var(--light);
-            min-width: 120px;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
-            background-color: white;
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover .contact-icon {
-            transform: scale(1.1);
-        }
-
-        .contact-item span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: center;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item:hover span {
-            color: var(--primary);
-        }
         /* Caja de aviso para cobro por trayecto */
-.alert-notice {
-    background-color: #e8f4fd; /* Azul muy suave */
-    color: var(--primary-dark);
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid var(--primary);
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 2rem auto;
-    max-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.05);
-}
-
-.alert-notice i {
-    font-size: 1.2rem;
-    color: var(--primary);
-}
-
-@media (max-width: 768px) {
-    .alert-notice {
-        font-size: 0.85rem;
-        padding: 0.8rem 1rem;
-        margin: 1.5rem 1rem;
-    }
-}
+        .alert-notice {background-color: #e8f4fd; /* Azul muy suave */color: var(--primary-dark);padding: 1rem 1.5rem;border-radius: 12px;border-left: 4px solid var(--primary);font-size: 0.95rem;font-weight: 600;margin: 2rem auto;max-width: 800px;display: flex;align-items: center;justify-content: center;gap: 0.8rem;text-align: center;box-shadow: 0 4px 10px rgba(0, 86, 179, 0.05);}
+        .alert-notice i {font-size: 1.2rem;color: var(--primary);}
+        @media (max-width: 768px) {.alert-notice {font-size: 0.85rem;padding: 0.8rem 1rem;margin: 1.5rem 1rem;}}
 
         /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        footer p {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
+        footer {background-color: var(--dark);color: white;text-align: center;padding: 2rem;}
+        footer p {opacity: 0.7;font-size: 0.9rem;}
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .services-grid-vehicles,
-            .services-grid-others {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Menú hamburguesa pendiente de JS */
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .about-image {
-                height: 300px;
-                order: -1;
-            }
-
-            .services-grid-vehicles,
-            .services-grid-others {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-methods {
-                gap: 1rem;
-            }
-            
-            .contact-item {
-                min-width: 100px;
-                padding: 0.8rem;
-            }
-            
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-            }
-        }
+        @media (max-width: 1024px) {.services-grid-vehicles, .services-grid-others {grid-template-columns: repeat(2, 1fr);}}
+        @media (max-width: 768px) {.nav-links {display: none; /* Menú hamburguesa pendiente de JS */}
+        .hero h1 {font-size: 2.2rem;}
+        .about-container {grid-template-columns: 1fr;gap: 2rem;}
+        .about-image {height: 300px;order: -1;}
+        .services-grid-vehicles, .services-grid-others {grid-template-columns: 1fr;}
+        .contact-methods {gap: 1rem;}
+        .contact-item {min-width: 100px;padding: 0.8rem;}
+        .contact-icon {width: 40px;height: 40px;}}
 
         /* Estilos para detalles desplegables */
-.service-details {
-    margin-top: 1rem;
-    background-color: var(--light);
-    border-radius: 8px;
-    padding: 0.8rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        .service-details {margin-top: 1rem;background-color: var(--light);border-radius: 8px;padding: 0.8rem;cursor: pointer;transition: all 0.3s ease;}
+        .service-details[open] {background-color: #e8f4fd;}
+        .details-summary {font-weight: 600;color: var(--primary);font-size: 0.9rem;list-style: none; /* Oculta el triángulo por defecto */display: flex;align-items: center;gap: 0.5rem;user-select: none;}
+        .details-summary::-webkit-details-marker {display: none; /* Para Safari/Chrome */}
+        .details-summary i {font-size: 0.7rem;transition: transform 0.3s ease;}
+        
+        /* Rotar el icono cuando está abierto */
+        .service-details[open] .details-summary i {transform: rotate(180deg);}
+        .details-list {list-style: none;padding: 0;margin: 1rem 0 0 0;animation: slideDown 0.3s ease;}
+        .details-list li {padding: 0.4rem 0;color: var(--gray);font-size: 0.9rem;display: flex;align-items: center;gap: 0.5rem;border-bottom: 1px solid rgba(0, 86, 179, 0.1);}
+        .details-list li:last-child {border-bottom: none;}
+        .details-list li i {color: var(--success);font-size: 0.8rem;}
 
-.service-details[open] {
-    background-color: #e8f4fd;
-}
+        /* Animación de deslizamiento */
+        @keyframes slideDown {from {opacity: 0;transform: translateY(-10px);}to {opacity: 1;transform: translateY(0);}}
+        
+        /* Hover effect */
+        .details-summary:hover {color: var(--primary-dark);}
 
-.details-summary {
-    font-weight: 600;
-    color: var(--primary);
-    font-size: 0.9rem;
-    list-style: none; /* Oculta el triángulo por defecto */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    user-select: none;
-}
+        /* Barra de promesa de marca - Elegante y no invasiva */
+        .promise-marquee {position: fixed;top: 0;left: 0;width: 100%;background-color: var(--dark); /* Fondo oscuro para que se vea serio y premium */color: rgba(255, 255, 255, 0.85);padding: 0.4rem 0;overflow: hidden;z-index: 1001;font-size: 0.7rem; /* Texto pequeño y sutil */font-weight: 400;letter-spacing: 1px; /* Espaciado entre letras para darle elegancia */text-transform: uppercase; /* Mayúsculas para que parezca un lema oficial */}
+        .promise-track {display: flex;align-items: center;white-space: nowrap;animation: scrollPromise 50s linear infinite; /* Muy lento para que se lea con calma */width: max-content;}
+        .promise-track span {display: inline-flex;align-items: center;padding: 0 2rem;}
+        .promise-track span i {margin-right: 8px;color: var(--accent); /* El color cyan resalta sutilmente el icono */font-size: 0.6rem;}
+        .promise-track .separator {padding: 0;opacity: 0.3;font-size: 0.5rem;}
 
-.details-summary::-webkit-details-marker {
-    display: none; /* Para Safari/Chrome */
-}
+        /* Ajustes para que el header y el hero no queden tapados por esta barra */
+        header {top: 28px; /* Altura aproximada de la barra de promesa */}
+        .hero {margin-top: 98px; /* 70px del header + 28px de la barra */}
+        @keyframes scrollPromise {0% { transform: translateX(0); }100% { transform: translateX(-50%); }}
 
-.details-summary i {
-    font-size: 0.7rem;
-    transition: transform 0.3s ease;
-}
+        /* Se pausa suavemente al pasar el mouse */
+        .promise-marquee:hover .promise-track {animation-play-state: paused;}
 
-/* Rotar el icono cuando está abierto */
-.service-details[open] .details-summary i {
-    transform: rotate(180deg);
-}
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {.promise-marquee {font-size: 0.6rem;letter-spacing: 0.5px;padding: 0.35rem 0;}header { top: 24px; } .hero { margin-top: 94px; }}
+        #botonArriba {display: none; /* Oculto al principio */position: fixed; /* Posición fija en la pantalla */bottom: 20px; /* Distancia desde abajo */right: 20px; /* Distancia desde la derecha */z-index: 99; /* Se asegura de estar por encima de otros elementos */border: none;outline: none;background-color: #333; /* Color de fondo */color: white; /* Color de la flecha */cursor: pointer;padding: 15px;border-radius: 50%; /* Botón redondo */font-size: 18px;width: 50px;height: 50px;box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);transition: background-color 0.3s;}
+        #botonArriba:hover {background-color: #555; /* Color al pasar el mouse */}
 
-.details-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    animation: slideDown 0.3s ease;
-}
-
-.details-list li {
-    padding: 0.4rem 0;
-    color: var(--gray);
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 1px solid rgba(0, 86, 179, 0.1);
-}
-
-.details-list li:last-child {
-    border-bottom: none;
-}
-
-.details-list li i {
-    color: var(--success);
-    font-size: 0.8rem;
-}
-
-/* Animación de deslizamiento */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hover effect */
-.details-summary:hover {
-    color: var(--primary-dark);
-}
-
-/* Barra de promesa de marca - Elegante y no invasiva */
-.promise-marquee {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--dark); /* Fondo oscuro para que se vea serio y premium */
-    color: rgba(255, 255, 255, 0.85);
-    padding: 0.4rem 0;
-    overflow: hidden;
-    z-index: 1001;
-    font-size: 0.7rem; /* Texto pequeño y sutil */
-    font-weight: 400;
-    letter-spacing: 1px; /* Espaciado entre letras para darle elegancia */
-    text-transform: uppercase; /* Mayúsculas para que parezca un lema oficial */
-}
-
-.promise-track {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scrollPromise 50s linear infinite; /* Muy lento para que se lea con calma */
-    width: max-content;
-}
-
-.promise-track span {
-    display: inline-flex;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.promise-track span i {
-    margin-right: 8px;
-    color: var(--accent); /* El color cyan resalta sutilmente el icono */
-    font-size: 0.6rem;
-}
-
-.promise-track .separator {
-    padding: 0;
-    opacity: 0.3;
-    font-size: 0.5rem;
-}
-
-/* Ajustes para que el header y el hero no queden tapados por esta barra */
-header {
-    top: 28px; /* Altura aproximada de la barra de promesa */
-}
-
-.hero {
-    margin-top: 98px; /* 70px del header + 28px de la barra */
-}
-
-@keyframes scrollPromise {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* Se pausa suavemente al pasar el mouse */
-.promise-marquee:hover .promise-track {
-    animation-play-state: paused;
-}
-
-/* Ajustes para móviles */
-@media (max-width: 768px) {
-    .promise-marquee {
-        font-size: 0.6rem;
-        letter-spacing: 0.5px;
-        padding: 0.35rem 0;
-    }
-    header { top: 24px; }
-    .hero { margin-top: 94px; }
-}
-
-#botonArriba {
-  display: none; /* Oculto al principio */
-  position: fixed; /* Posición fija en la pantalla */
-  bottom: 20px; /* Distancia desde abajo */
-  right: 20px; /* Distancia desde la derecha */
-  z-index: 99; /* Se asegura de estar por encima de otros elementos */
-  border: none;
-  outline: none;
-  background-color: #333; /* Color de fondo */
-  color: white; /* Color de la flecha */
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 50%; /* Botón redondo */
-  font-size: 18px;
-  width: 50px;
-  height: 50px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
-
-#botonArriba:hover {
-  background-color: #555; /* Color al pasar el mouse */
-}
-
-/* Desplazamiento suave para toda la página */
-html {
-  scroll-behavior: smooth;
-}
+        /* Desplazamiento suave para toda la página */
+        html {scroll-behavior: smooth;}
     </style>
 </head>
 <body>
@@ -807,7 +223,7 @@ html {
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#maquinaria">Maquinaria</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto" class="btn-nav"><i class="fab fa-whatsapp"></i> Agendar</a></li>
+                <li><a href="#formContratacionSeda" class="btn-nav"><i class="fab fa-whatsapp"></i> Agendar</a></li>
             </ul>
         </nav>
     </header>
@@ -845,67 +261,14 @@ html {
                 <div class="service-icon"><i class="fas fa-car"></i></div>
                 <h3>Compacto - Servicio Básico</h3>
                 <h4>$10.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                        <li><i class="fas fa-check"></i> Shapoo para vehículos</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
-
 
                 <h3 style="margin-top: 1.5rem;">Compacto - Servicio Medium</h3>
                 <h4>$20.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior (aplicado de shampoo)</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Compacto - Servicio Full</h3>
                 <h4>$35.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
-                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
-                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20compacto%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -914,66 +277,14 @@ html {
                 <div class="service-icon"><i class="fas fa-car-side"></i></div>
                 <h3>Sedán - Servicio Básico</h3>
                 <h4>$15.000 (no incluye maletero)</h4>
-                
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza exterior</l>
-                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                        <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Medium</h3>
                 <h4>$25.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">Sedán - Servicio Full</h3>
                 <h4>$40.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
-                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
-                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20sedán%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -982,66 +293,14 @@ html {
                 <div class="service-icon"><i class="fas fa-truck-pickup"></i></div>
                 <h3>SUV / Camionetas - Básico</h3>
                 <h4>$20.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-            <i class="fas fa-chevron-down"></i> Ver detalle
-                </summary>
-                <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                    <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
-                </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">SUV / Camionetas - Medium</h3>
                 <h4>$30.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                    <li><i class="fas fa-check"></i> Aspirado</li>
-                    <li><i class="fas fa-check"></i> Renovador de Plásticos</li>
-                    <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
 
                 <h3 style="margin-top: 1.5rem;">SUV / Camionetas - Full</h3>
                 <h4>$45.000 (no incluye maletero)</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de Plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
-                        <li><i class="fas fa-check"></i> + Limpieza de Tapicería</li>
-                        <li><i class="fas fa-check"></i> + Desinfección a Vapor</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20SUV%20o%20camioneta%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
                 <p style="font-size: 0.85rem; color: var(--gray);"><em>*Limpieza de maletero: $10.000 adicionales</em></p>
             </div>
 
@@ -1051,63 +310,11 @@ html {
                 <h3>Furgones y Vehículos XL - Básico</h3>
                 <h4>$25.000</h4>
 
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                        <li><i class="fas fa-check"></i> Shampoo para vehículos</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
-
                 <h3 style="margin-top: 1.5rem;">Furgones y Vehículos XL - Medium</h3>
                 <h4>$35.000</h4>
 
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior</li>
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
-
-                 <h3 style="margin-top: 1.5rem;">Furgones y Vehículos XL - Full</h3>
-                 <h4>$50.000</h4>
-
-                 <!-- Detalles desplegables -->
-                  <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza interior completa</li>
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza exterior completa</li>
-                        <li><i class="fas fa-check"></i> + Limpieza de tapicería</li>
-                        <li><i class="fas fa-check"></i> + Desinfección a vapor</li>
-                    </ul>
-                  </details>
-                  <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20furgones%20/%20vehículos%20XL%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
+                <h3 style="margin-top: 1.5rem;">Furgones y Vehículos XL - Full</h3>
+                <h4>$50.000</h4>
              </div>
 
              <!-- Motos -->
@@ -1115,66 +322,12 @@ html {
                 <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
                 <h3 style="margin-top: 1.5rem;">Motos - Básico</h3>
                 <h4>$8.000</h4>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza completa</li>
-                        <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>                        
-                    </ul>
-                 </details>
-                 <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
               
-              <h3 style="margin-top: 1.5rem;">Motos - Medium</h3>
-              <h4>$15.000</h4>
+                <h3 style="margin-top: 1.5rem;">Motos - Medium</h3>
+                <h4>$15.000</h4>
 
-              <!-- Detalles desplegables -->
-               <details class="service-details">
-                <summary class="details-summary">
-                    <i class="fas fa-chevron-down"></i> Ver detalle
-                </summary>
-                <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza completa</li>
-                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
-                </ul>
-               </details>
-               <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
-
-               <h3 style="margin-top: 1.5rem;">Motos - Full</h3>
-               <h4>$25.000</h4>
-
-               <!-- Detalles desplegables -->
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Limpieza completa</li>
-                        <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                        <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                        <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                        <li><i class="fas fa-check"></i> Limpieza de tablero</li>
-                        <li><i class="fas fa-check"></i> Desinfección de asientos</li>
-                        <li><i class="fas fa-check"></i> Pulido de plásticos</li>
-                    </ul>
-                </details>
-                <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20motos%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
+                <h3 style="margin-top: 1.5rem;">Motos - Full</h3>
+                <h4>$25.000</h4>
         </div>
 
         <!-- Cuatrimotos -->
@@ -1183,65 +336,11 @@ html {
             <h3 style="margin-top: 1.5rem;">Cuatrimotos - Básico</h3>
             <h4>$12.000</h4>
             
-            <!-- Detalles desplegables -->
-             <details class="service-details">
-                <summary class="details-summary">
-                    <i class="fas fa-chevron-down"></i> Ver detalle
-                </summary>
-                <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza completa</li>
-                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                </ul>
-             </details>
-             <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20básico" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
+            <h3 style="margin-top: 1.5rem;">Cuatrimotos - Medium</h3>
+            <h4>$22.000</h4>
 
-             <h3 style="margin-top: 1.5rem;">Cuatrimotos - Medium</h3>
-             <h4>$22.000</h4>
-
-             <!-- Detalles desplegables -->
-              <details class="service-details">
-                <summary class="details-summary">
-                    <i class="fas fa-chevron-down"></i> Ver detalle
-                </summary>
-                <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza completa</li>
-                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
-                </ul>
-             </details>
-             <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20medium" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
-
-             <h3 style="margin-top: 1.5rem;">Cuatrimotos - Full</h3>
-             <h4>$35.000</h4>
-
-             <!-- Detalles desplegables -->
-              <details class="service-details">
-                <summary class="details-summary">
-                    <i class="fas fa-chevron-down"></i> Ver detalle
-                </summary>
-                <ul class="details-list">
-                    <li><i class="fas fa-check"></i> Limpieza completa</li>
-                    <li><i class="fas fa-check"></i> Shampoo especial para motos</li>
-                    <li><i class="fas fa-check"></i> Renovador de neumáticos</li>
-                    <li><i class="fas fa-check"></i> Renovador de plásticos</li>
-                    <li><i class="fas fa-check"></i> Limpieza de tablero</li>
-                    <li><i class="fas fa-check"></i> Desinfección de asientos</li>
-                    <li><i class="fas fa-check"></i> Pulido de plásticos</li>
-                </ul>
-              </details>
-              <!-- Botón WhatsApp -->
-                  <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20cuatrimotos%20full" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
+            <h3 style="margin-top: 1.5rem;">Cuatrimotos - Full</h3>
+            <h4>$35.000</h4>
          </div>
         </div>
         
@@ -1263,81 +362,24 @@ html {
                 <div class="service-icon"><i class="fas fa-soap"></i></div>
                 <h3>Solo tapiz vehículo compacto</h3>
                 <h4>$25.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
              </div>
+
              <div class="service-card">
                 <div class="service-icon"><i class="fas fa-soap"></i></div>
                 <h3>Solo tapiz vehículo sedán</h3>
                 <h4>$30.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
              </div>
+
              <div class="service-card">
                 <div class="service-icon"><i class="fas fa-soap"></i></div>
                 <h3>Solo tapiz vehiculo SUV</h3>
                 <h4>$35.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
              </div>
+
              <div class="service-card">
                 <div class="service-icon"><i class="fas fa-soap"></i></div>
                 <h3>Solo tapiz furgón y vehículos XL</h3>
                 <h4>$45.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
              </div>
              </div>
 
@@ -1352,83 +394,25 @@ html {
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-suitcase"></i></div>
                 <h3>Maletero vehículo compacto</h3>
-                <h4>$5.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>                
+                <h4>$5.000</h4>                
             </div>
+
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-suitcase"></i></div>
                 <h3>Maletero vehículo sedán</h3>
                 <h4>$10.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
             </div>
+
             <div class="service-card">
             <div class="service-icon"><i class="fas fa-suitcase"></i></div>
                 <h3>Maletero vehículos SUV</h3>
                 <h4>$15.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
           </div>
+
           <div class="service-card">
           <div class="service-icon"><i class="fas fa-suitcase"></i></div>
                 <h3>Maletero furgón y vehículos XL</h3>
                 <h4>$20.000</h4>
-                <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo especial</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Extracción de humedad</li>
-                    </ul>
-                </details>
-                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                </a>
-
            </div>
            </div>          
 
@@ -1446,21 +430,6 @@ html {
                 <h3>Sillas</h3>
                 <p><strong>Solo posadera:</strong><br>$5.000 c/u</p>
                 <p style="margin-top: 1rem;"><strong>Posadera y respaldo:</strong><br>$8.000 c/u</p>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                    </ul>
-                 </details>
-                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillas" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
             </div>
            
             <!-- ALFOMBRAS -->
@@ -1469,24 +438,6 @@ html {
                 <h3>Alfombras</h3>
                 <p><strong>Limpieza completa:</strong><br>$25.000</p>
                 <p style="margin-top: 1rem;"><strong>Cubrepiso / Muro a muro:</strong><br>+ $2.500 por m²</p>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado de polvo</li>
-                        <li><i class="fas fa-check"></i> Lavado con shampoo para alfombras</li>
-                        <li><i class="fas fa-check"></i> Aspirado de liquido (shampoo)</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
-                    </ul>
-                 </details>
-                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20alfombras" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
             </div>
 
             <!-- SILLONES -->
@@ -1497,22 +448,6 @@ html {
                 <p><strong>Dos Cuerpos:</strong> $20.000</p>
                 <p><strong>Tres Cuerpos:</strong> $25.000</p>
                 <p><strong>Sillón tipo L:</strong> desde $25.000</p>
-
-                <!-- Detalles desplegables -->
-                 <details class="service-details">
-                    <summary class="details-summary">
-                        <i class="fas fa-chevron-down"></i> Ver detalle
-                    </summary>
-                    <ul class="details-list">
-                        <li><i class="fas fa-check"></i> Aspirado de polvo</li>
-                        <li><i class="fas fa-check"></i> Tratamiento de vapor</li>
-                        <li><i class="fas fa-check"></i> Eliminación de ácaros y sanitización</li>
-                        <li><i class="fas fa-check"></i> Eliminación de malos olores</li>
-                    </ul>
-                 </details>
-                 <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20me%20interesa%20el%20servicio%20lavado%20de%20sillones" class="btn-whatsapp-card" target="_blank">
-                    <i class="fas fa-whatsapp"></i> Más información
-                  </a>
             </div>
         </div>
         
@@ -1520,6 +455,116 @@ html {
         <i class="fas fa-info-circle"></i>
         <span>Para servicios fuera de Nueva Imperial se cobrará un adicional por trayecto.</span>
     </div>
+
+        <!-- Cotización y Contratación de Servicios -->
+        <section class="seccion-formulario">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Solicitud de Servicio a Domicilio</h2>
+                    <p>SEDA SpA - Lavado de Autos y Tapices a Domicilio</p>
+                </div>
+
+                <form id="formContratacionSeda">
+                    <!-- Datos del Cliente -->
+                    <div class="form-group">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono / WhatsApp:</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+56 9 1234 5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comuna"><i class="fas fa-map-marker-alt"></i> Comuna:</label>
+                        <select id="comuna" name="comuna" required>
+                            <option value="Nueva Imperial">Nueva Imperial</option>
+                            <option value="Carahue">Carahue</option>
+                            <option value="Chol-Chol">Chol-Chol</option>
+                            <option value="Labranza">Labranza</option>
+                            <option value="Temuco">Temuco</option>
+                            <option value="Padre Las Casas">Padre Las Casas</option>
+                            <option value="Otra">Otra comuna de la Araucanía</option>
+                        </select>
+                    </div>
+
+                    <!-- Selector de Servicios -->
+                    <div class="form-group">
+                        <label for="servicio"><i class="fas fa-concierge-bell"></i> Selecciona el Servicio Deseado:</label>
+                        <select id="servicio" name="servicio" onchange="mostrarDetalleServicio()" required>
+                            <option value="">-- Selecciona un servicio --</option>
+                            
+                            <optgroup label=" Lavado de Vehículos">
+                                <option value="comp_basico">Compacto - Básico ($10.000)</option>
+                                <option value="comp_medium">Compacto - Medium ($20.000)</option>
+                                <option value="comp_full">Compacto - Full ($35.000)</option>
+                                <option value="sedan_basico">Sedán - Básico ($15.000)</option>
+                                <option value="sedan_medium">Sedán - Medium ($25.000)</option>
+                                <option value="sedan_full">Sedán - Full ($40.000)</option>
+                                <option value="suv_basico">SUV / Camionetas - Básico ($20.000)</option>
+                                <option value="suv_medium">SUV / Camionetas - Medium ($30.000)</option>
+                                <option value="suv_full">SUV / Camionetas - Full ($45.000)</option>
+                                <option value="xl_basico">Furgones y XL - Básico ($25.000)</option>
+                                <option value="xl_medium">Furgones y XL - Medium ($35.000)</option>
+                                <option value="xl_full">Furgones y XL - Full ($50.000)</option>
+                                <option value="moto_basico">Moto - Básico ($8.000)</option>
+                                <option value="moto_medium">Moto - Medium ($15.000)</option>
+                                <option value="moto_full">Moto - Full ($25.000)</option>
+                                <option value="cuatri_basico">Cuatrimoto - Básico ($12.000)</option>
+                                <option value="cuatri_medium">Cuatrimoto - Medium ($22.000)</option>
+                                <option value="cuatri_full">Cuatrimoto - Full ($35.000)</option>
+                            </optgroup>
+
+                            <optgroup label=" Tapicería Automotriz (Solo Tapiz)">
+                                <option value="tapiz_comp">Solo tapiz vehículo compacto ($25.000)</option>
+                                <option value="tapiz_sedan">Solo tapiz vehículo sedán ($30.000)</option>
+                                <option value="tapiz_suv">Solo tapiz vehículo SUV ($35.000)</option>
+                                <option value="tapiz_xl">Solo tapiz furgón y XL ($45.000)</option>
+                            </optgroup>
+
+                            <optgroup label=" Maleteros Automotrices">
+                                <option value="mal_comp">Maletero vehículo compacto ($5.000)</option>
+                                <option value="mal_sedan">Maletero vehículo sedán ($10.000)</option>
+                                <option value="mal_suv">Maletero vehículo SUV ($15.000)</option>
+                                <option value="mal_xl">Maletero furgón y XL ($20.000)</option>
+                            </optgroup>
+
+                            <optgroup label=" Limpieza de Muebles y Hogar">
+                                <option value="silla_posadera">Sillas - Solo posadera ($5.000 c/u)</option>
+                                <option value="silla_completa">Sillas - Posadera y respaldo ($8.000 c/u)</option>
+                                <option value="alfombra">Alfombras - Limpieza completa ($25.000)</option>
+                                <option value="sillon_1c">Sillón - 1 Cuerpo ($15.000)</option>
+                                <option value="sillon_2c">Sillón - 2 Cuerpos ($20.000)</option>
+                                <option value="sillon_3c">Sillón - 3 Cuerpos ($25.000)</option>
+                                <option value="sillon_l">Sillón tipo L (desde $25.000)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Sección de Detalle Desplegable -->
+                    <div id="detalleServicio" class="servicio-detalle">
+                        <h3 id="tituloServicio">Detalles del Servicio</h3>
+                        
+                        <div class="precio-box">
+                            <span>Valor: </span><span id="precioTexto" class="precio"></span>
+                        </div>
+
+                        <p><strong>Incluye:</strong></p>
+                        <ul id="listaDetalles" class="details-list"></ul>
+
+                        <div class="observaciones">
+                            <i class="fas fa-info-circle"></i> <strong>Observaciones:</strong>
+                            <span id="observacionesTexto"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-agendar">
+                        <i class="fab fa-whatsapp"></i> Agendar Servicio por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
 
         <!-- NOTA FINAL -->
         <div class="service-card" style="margin-top: 3rem; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -1664,9 +709,6 @@ html {
         <div class="contact-box">
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">¿Listo para ver tu auto como nuevo?</p> 
             <p style="margin-bottom: 2rem;"><strong>Escríbenos directamente a WhatsApp y coordina la visita en minutos.</strong></p>
-            <a href="https://wa.me/56987464278?text=Hola%20SEDA,%20quiero%20agendar%20un%20servicio%20a%20domicilio%20en%20Nueva%20Imperial." class="btn-primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp
-            </a>
         </div>
             
         <div class="contact-methods">
@@ -1712,6 +754,283 @@ html {
             <strong>Estamos trabajando para mejorar la experincia del usuario</strong>
         </p>
     </footer>
+
+<!-- Cotización -->
+ <script>
+    // Estructura de datos basada en las tarifas de SEDA
+    const serviciosSEDA = {
+        // VEHICULOS - COMPACTO
+        comp_basico: {
+            titulo: "Compacto - Servicio Básico",
+            precio: "$10.000",
+            detalles: ["Limpieza exterior: $7.000", "Renovador de neumáticos: $1.500", "Shampoo para vehículos: $2.500"],
+            obs: "No incluye maletero (Limpieza de maletero: $10.000 adicionales)."
+        },
+        comp_medium: {
+            titulo: "Compacto - Servicio Medium",
+            precio: "$20.000",
+            detalles: ["Limpieza interior completa: $6.000", "Aspirado: $5.000", "Renovador de plásticos: $3.000", "Limpieza exterior (shampoo): $6.000"],
+            obs: "No incluye maletero (Limpieza de maletero: $10.000 adicionales)."
+        },
+        comp_full: {
+            titulo: "Compacto - Servicio Full",
+            precio: "$35.000",
+            detalles: ["Limpieza interior completa: $6.500", "Aspirado: $5.500", "Renovador de plásticos: 3.500", "Limpieza exterior completa: $6.500", "Limpieza de tapicería: $7.500", "Desinfección a vapor: $5.500"],
+            obs: "No incluye maletero."
+        },
+
+        // VEHICULOS - SEDAN
+        sedan_basico: {
+            titulo: "Sedán - Servicio Básico",
+            precio: "$15.000",
+            detalles: ["Limpieza exterior con Shampoo para vehículos: $10.000", "Renovador de neumáticos: $5.000"],
+            obs: "No incluye maletero."
+        },
+        sedan_medium: {
+            titulo: "Sedán - Servicio Medium",
+            precio: "$25.000",
+            detalles: ["Limpieza interior completa con aspirado: $10.000", "Renovador de plásticos: $5.000", "Limpieza exterior con shampoo y renovador de neumáticos: $10.000"],
+            obs: "No incluye maletero."
+        },
+        sedan_full: {
+            titulo: "Sedán - Servicio Full",
+            precio: "$40.000",
+            detalles: ["Limpieza interior completa con aspirado: $10.000", "Renovador de plásticos: $5.000", "Limpieza exterior con shampoo y renovador de neumáticos: $10.000", "Limpieza de tapicería: $9.500", "Desinfección a vapor: $5.500"],
+            obs: "No incluye maletero."
+        },
+
+        // VEHICULOS - SUV / CAMIONETAS
+        suv_basico: {
+            titulo: "SUV / Camionetas - Básico",
+            precio: "$20.000",
+            detalles: ["Limpieza exterior con shampoo para vehículos: $15.000", "Renovador de neumáticos: $5.000"],
+            obs: "No incluye maletero."
+        },
+        suv_medium: {
+            titulo: "SUV / Camionetas - Medium",
+            precio: "$30.000",
+            detalles: ["Limpieza interior completa con aspirado: $18.000", "Renovador de plásticos: $5.500", "Limpieza exterior con shampoo y renovador de neumáticos: $6.500"],
+            obs: "No incluye maletero."
+        },
+        suv_full: {
+            titulo: "SUV / Camionetas - Full",
+            precio: "$45.000",
+            detalles: ["Limpieza interior completa con aspirado: $11.000", "Renovador de plásticos: $6.000", "Limpieza exterior con shampoo y renovador de neumaticos: $11.000", "Limpieza de tapicería: $11.000", "Desinfección a vapor: $6.000"],
+            obs: "No incluye maletero."
+        },
+
+        // VEHICULOS - XL Y FURGONES
+        xl_basico: {
+            titulo: "Furgones y Vehículos XL - Básico",
+            precio: "$25.000",
+            detalles: ["Limpieza exterior con shampoo para vehículos: $18.000", "Renovador de neumáticos: $7.000"],
+            obs: "Precios pueden variar según el grado de suciedad del vehículo."
+        },
+        xl_medium: {
+            titulo: "Furgones y Vehículos XL - Medium",
+            precio: "$35.000",
+            detalles: ["Limpieza interior completa con aspirado: $20.000", "Renovador de plásticos: $8.000", "Limpieza exterior con shampoo y renovador de neumáticos: $7.000"],
+            obs: "Precios pueden variar según el grado de suciedad del vehículo."
+        },
+        xl_full: {
+            titulo: "Furgones y Vehículos XL - Full",
+            precio: "$50.000",
+            detalles: ["Limpieza interior completa con aspirado: $12.000", "Renovador de plásticos: $7.000", "Limpieza exterior con shampoo y renovador de neumáticos: $12.000", "Limpieza de tapicería: $12.000", "Desinfección a vapor: $7.000"],
+            obs: "Precios pueden variar según el grado de suciedad del vehículo."
+        },
+
+        // MOTOS Y CUATRIMOTOS
+        moto_basico: {
+            titulo: "Moto - Básico",
+            precio: "$8.000",
+            detalles: ["Limpieza completa con shampoo especial: $4.000", "Renovador de neumáticos: $4.000"],
+            obs: "Servicio a domicilio rápido con ahorro de agua."
+        },
+        moto_medium: {
+            titulo: "Moto - Medium",
+            precio: "$15.000",
+            detalles: ["Limpieza completa con shampoo especial: $4.000", "Renovador de neumáticos: $4.000", "Renovador de plásticos y limpieza de tablero: $7.000"],
+            obs: "Servicio a domicilio directo en tu ubicación."
+        },
+        moto_full: {
+            titulo: "Moto - Full",
+            precio: "$25.000",
+            detalles: ["Limpieza completa con shampoo especial: $4.000", "Renovador de neumáticos: $4.000", "Renovador de plásticos y limpieza de tablero: $7.000", "Desinfección de asientos a vapor: $10.000"],
+            obs: "Tratamiento completo de renovación."
+        },
+        cuatri_basico: {
+            titulo: "Cuatrimoto - Básico",
+            precio: "$12.000",
+            detalles: ["Limpieza con shampoo especial: $6.000", "Renovador de neumáticos: $6.000"],
+            obs: "Ajuste según nivel de barro/suciedad."
+        },
+        cuatri_medium: {
+            titulo: "Cuatrimoto - Medium",
+            precio: "$22.000",
+            detalles: ["Limpieza completa con shampoo especial: $6.500", "Renovador de neumáticos: $6.500", "Renovador de plásticos y limpieza de tablero: $9.000"],
+            obs: "Limpieza detallada a domicilio."
+        },
+        cuatri_full: {
+            titulo: "Cuatrimoto - Full",
+            precio: "$35.000",
+            detalles: ["Limpieza al detalle con shampoo especial: $7.000", "Renovador de neumáticos: $7.000", "Renovador de plásticos y limpieza de tablero: 10.000", "Desinfección de asientos a vapor: $11.000"],
+            obs: "Tratamiento intensivo a domicilio."
+        },
+
+        // TAPICERIA AUTOMOTRIZ
+        tapiz_comp: {
+            titulo: "Solo tapiz vehículo compacto",
+            precio: "$25.000",
+            detalles: ["Aspirado full", "Tratamiento de vapor al detalle", "Lavado con shampoo especial full", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Servicio concentrado únicamente en los asientos/tapices (el servicio es completo)."
+        },
+        tapiz_sedan: {
+            titulo: "Solo tapiz vehículo sedán",
+            precio: "$30.000",
+            detalles: ["Aspirado full", "Tratamiento de vapor al detalle", "Lavado con shampoo especial full", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Servicio concentrado únicamente en los asientos/tapices (el servicio es completo)."
+        },
+        tapiz_suv: {
+            titulo: "Solo tapiz vehículo SUV",
+            precio: "$35.000",
+            detalles: ["Aspirado full", "Tratamiento de vapor al detalle", "Lavado con shampoo especial full", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Servicio concentrado únicamente en los asientos/tapices (el servicio es completo)."
+        },
+        tapiz_xl: {
+            titulo: "Solo tapiz furgón y XL",
+            precio: "$45.000",
+            detalles: ["Aspirado full", "Tratamiento de vapor al detalle", "Lavado con shampoo especial full", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Servicio concentrado únicamente en los asientos/tapices (el servicio es completo)."
+        },
+
+        // MALETEROS
+        mal_comp: {
+            titulo: "Maletero vehículo compacto",
+            precio: "$5.000",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Lavado con shampoo especial", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Sujeto a factibilidad según tipo de suciedad (el servicio es completo)."
+        },
+        mal_sedan: {
+            titulo: "Maletero vehículo sedán",
+            precio: "$10.000",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Lavado con shampoo especial", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Sujeto a factibilidad según tipo de suciedad (el servicio es completo)."
+        },
+        mal_suv: {
+            titulo: "Maletero vehículo SUV",
+            precio: "$15.000",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Lavado con shampoo especial", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Sujeto a factibilidad según tipo de suciedad (el servicio es completo)."
+        },
+        mal_xl: {
+            titulo: "Maletero furgón y XL",
+            precio: "$20.000",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Lavado con shampoo especial", "Eliminación de ácaros y sanitización", "Extracción de humedad"],
+            obs: "Sujeto a factibilidad según tipo de suciedad (el servicio es completo)."
+        },
+
+        // HOGAR Y MUEBLES
+        silla_posadera: {
+            titulo: "Sillas (Solo posadera)",
+            precio: "$5.000 c/u",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Eliminación de ácaros y sanitización"],
+            obs: "Valor unitario por silla (el servicio es completo)."
+        },
+        silla_completa: {
+            titulo: "Sillas (Posadera y respaldo)",
+            precio: "$8.000 c/u",
+            detalles: ["Aspirado", "Tratamiento de vapor", "Eliminación de ácaros y sanitización"],
+            obs: "Valor unitario por silla (el servicio es completo)."
+        },
+        alfombra: {
+            titulo: "Alfombras - Limpieza completa",
+            precio: "$25.000",
+            detalles: ["Aspirado de polvo", "Lavado con shampoo especial", "Aspirado de líquido", "Tratamiento de vapor", "Sanitización y eliminación de olores"],
+            obs: "Cubrepiso / Muro a muro: +$2.500 adicionales por m² (el servicio es completo)."
+        },
+        sillon_1c: {
+            titulo: "Sillón - 1 Cuerpo",
+            precio: "$15.000",
+            detalles: ["Aspirado de polvo", "Tratamiento de vapor", "Eliminación de ácaros y sanitización", "Eliminación de malos olores"],
+            obs: "Limpieza a domicilio (el servicio es completo)."
+        },
+        sillon_2c: {
+            titulo: "Sillón - 2 Cuerpos",
+            precio: "$20.000",
+            detalles: ["Aspirado de polvo", "Tratamiento de vapor", "Eliminación de ácaros y sanitización", "Eliminación de malos olores"],
+            obs: "Limpieza a domicilio (el servicio es completo)."
+        },
+        sillon_3c: {
+            titulo: "Sillón - 3 Cuerpos",
+            precio: "$25.000",
+            detalles: ["Aspirado de polvo", "Tratamiento de vapor", "Eliminación de ácaros y sanitización", "Eliminación de malos olores"],
+            obs: "Limpieza a domicilio (el servicio es completo)."
+        },
+        sillon_l: {
+            titulo: "Sillón tipo L",
+            precio: "Desde $25.000",
+            detalles: ["Aspirado de polvo", "Tratamiento de vapor", "Eliminación de ácaros y sanitización", "Eliminación de malos olores"],
+            obs: "El valor exacto depende del tamaño y cantidad de módulos, (el servicio es completo - se adicionarán $5.000 por cada módulo extra)."
+        }
+    };
+
+    function mostrarDetalleServicio() {
+        const select = document.getElementById('servicio');
+        const detalleDiv = document.getElementById('detalleServicio');
+        const listaDetalles = document.getElementById('listaDetalles');
+        const opcion = select.value;
+
+        if (opcion && serviciosSEDA[opcion]) {
+            const data = serviciosSEDA[opcion];
+            
+            document.getElementById('tituloServicio').textContent = data.titulo;
+            document.getElementById('precioTexto').textContent = data.precio;
+            
+            // Cargar lista de beneficios / inclusiones
+            listaDetalles.innerHTML = '';
+            data.detalles.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle"></i> ${item}`;
+                listaDetalles.appendChild(li);
+            });
+
+            // Cargar observaciones (y agregar aviso de comuna si aplica)
+            let obsTexto = data.obs;
+            const comunaSel = document.getElementById('comuna').value;
+            if (comunaSel !== "Nueva Imperial") {
+                obsTexto += " *Para servicios fuera de Nueva Imperial se aplicará un adicional por trayecto.";
+            }
+
+            document.getElementById('observacionesTexto').textContent = obsTexto;
+            detalleDiv.style.display = 'block';
+        } else {
+            detalleDiv.style.display = 'none';
+        }
+    }
+
+    // Envío del formulario redirigiendo a WhatsApp con el mensaje armado
+    document.getElementById('formContratacionSeda').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nombre = document.getElementById('nombre').value;
+        const telefono = document.getElementById('telefono').value;
+        const comuna = document.getElementById('comuna').value;
+        const servicioKey = document.getElementById('servicio').value;
+        
+        if (!servicioKey) return;
+
+        const servicioInfo = serviciosSEDA[servicioKey];
+        
+        const mensaje = `Hola SEDA, me interesa agendar un servicio:%0A%0A` +
+                        `*Nombre:* ${nombre}%0A` +
+                        `*Teléfono:* ${telefono}%0A` +
+                        `*Comuna:* ${comuna}%0A` +
+                        `*Servicio:* ${servicioInfo.titulo}%0A` +
+                        `*Valor Referencial:* ${servicioInfo.precio}`;
+
+        window.open(`https://wa.me/56987464278?text=${mensaje}`, '_blank');
+    });
+</script>    
 
 
 <!-- Service Worker Registration -->
